@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse Code Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1 class="title">Morse Code Translator</h1>
+
+    <div class="container">
+        <form method="post">
+            <label for="input">Enter text or Morse code:</label>
+
+            <textarea id="input" name="input" placeholder="Type or paste text here...">{{ input_text | default('') }}</textarea>
+
+            <button type="submit">Translate</button>
+        </form>
+
+        {% if output %}
+            <div class="output">
+                <strong>{{ output }}</strong>
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        Project made by MC <br>
+    </footer>
+
+</body>
+
+</html>
